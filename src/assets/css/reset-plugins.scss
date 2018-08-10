@@ -1,0 +1,24 @@
+/*
+  element-ui
+  Select 组件 背景透明
+*/
+.transparent_select {
+  .el-input__suffix-inner i{
+    color: #fff !important;
+  }
+  input.el-input__inner {
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+  }
+}
+
+/*
+  element-ui
+  菜单
+*/
+.menu {
+  .el-submenu__title:hover{
+    z-index: 2
+  }
+}
