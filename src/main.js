@@ -16,12 +16,15 @@ import i18n from './assets/plugins/i18n'
 // 引入axios（ajax库）
 import './assets/plugins/axios'
 
-/* eslint-disable no-new */
+// 引入过滤器
+import './assets/js/filter'
+
+// 全局注册组件
+import './components'
+
 new Vue({
-  el: '#app',
+  router,
   store,
   i18n,
-  router,
-  components: { App },
-  template: '<App/>'
-})
+  render: h => h(App)
+}).$mount('#app')

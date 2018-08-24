@@ -1,3 +1,4 @@
+@import "../../config/ui.scss";
 /*
   element-ui
   Select 组件 背景透明
@@ -18,7 +19,87 @@
   菜单
 */
 .menu {
-  .el-submenu__title:hover{
+  .el-menu--collapse .el-submenu__title:hover{
     z-index: 2
+  }
+}
+
+/*
+  element-ui
+  面包屑
+*/
+.current{
+  span.el-breadcrumb__inner{
+    color: $publicColor !important;
+  }
+}
+
+/*
+  表格
+*/
+.el-table{
+  &.no_hover.el-table--enable-row-hover{
+    .el-table__body tr:hover > td{
+      background-color: transparent;
+    }
+  }
+  .el-table__expanded-cell[class*=cell]{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/*
+  表单
+*/
+.el-form-item.is-success .el-input__inner,
+.el-form-item.is-success .el-input__inner:focus,
+.el-form-item.is-success .el-textarea__inner,
+.el-form-item.is-success .el-textarea__inner:focus{
+  border-color: #dcdfe6 !important;
+}
+.table_form{
+  .el-form-item{
+    margin-bottom: 0px;
+  }
+  &.el-form--inline .el-form-item{
+    margin-right: 25px;
+    &:last-of-type{
+      margin-right: 0px;
+    }
+  }
+  .el-form-item__label{
+    color: #99a9bf;
+  }
+}
+
+/*
+  计数器
+*/
+.el-input-number{
+  &.hide_button {
+    .el-input-number__decrease,
+    .el-input-number__increase{
+      display: none !important;
+    }
+    .el-input__inner{
+      text-align: left;
+    }
+  }
+}
+
+/*
+  el-button 按钮样式
+*/
+.el-button{
+  &.button_type_public{
+    background-color: $publicColor;
+    color: #fff !important;
+    &:focus{
+      background-color: $publicColor;
+    }
+    &:hover{
+      background-color: $publicColor / 1.1;
+    }
   }
 }

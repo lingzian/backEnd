@@ -26,5 +26,17 @@ export default {
     SystemSetting: '系統設置',
     RoleManagement: '角色管理',
     AccountManagement: '賬號管理'
+  },
+  data: {
+    noFillOut: '未填寫',
+    createTime: '創建時間',
+    updateTime: '更改時間',
+    name: '名稱',
+    roleName: '角色名稱',
+    area: '地區'
+  },
+  area: {
+    macau: '澳門',
+    taipa: '氹仔'
   }
 }

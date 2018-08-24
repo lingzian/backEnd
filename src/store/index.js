@@ -8,8 +8,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    menu: menu,
-    user: user
+    menu,
+    user
   }
 })
 

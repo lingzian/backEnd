@@ -62,26 +62,18 @@ export const addEvent = (element, eType, handle, bol) => {
   cookie
 */
 export const cookie = {
-  set: function (name, value, hours) {
-    hours = hours || 2
-    let exp = new Date()
-    exp.setTime(exp.getTime() + (60 * 1000 * 60 * hours))
-    document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString()
+  set (key, value, hours) {
+    let d = new Date()
+    d.setTime(d.getTime() + 60 * 60 * 1000 * hours)
+    window.document.cookie =
+      key + '=' + value + ';path=/;expires=' + d.toGMTString()
   },
-  get: function (name) {
-    let reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
-    let arr = document.cookie.match(reg)
-    if (arr) {
-      return unescape(arr[2])
-    } else {
-      return null
-    }
+  get (key) {
+    let v = window.document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)')
+    return v ? v[2] : null
   },
-  del: function (name) {
-    let exp = new Date()
-    exp.setTime(exp.getTime() - 1)
-    let cval = this.get(name)
-    if (cval != null) document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString()
+  del (key) {
+    this.set(key, '', -1)
   }
 }
 
@@ -116,6 +108,21 @@ export const getOperatingSystem = () => {
 /*
   删除节点
 */
-export const removeNode = (node) => {
+export const removeNode = node => {
   node.parentNode.removeChild(node)
+}
+
+/*
+  克隆数组、对象
+*/
+export const cloneObject = (obj, complex) => {
+  if (!complex) {
+    return JSON.parse(JSON.stringify(obj))
+  } else {
+    let newObj = obj instanceof Array ? [] : {}
+    for (let k in obj) {
+      newObj[k] = typeof obj[k] === 'object' ? cloneObject(obj[k], true) : obj[k]
+    }
+    return newObj
+  }
 }

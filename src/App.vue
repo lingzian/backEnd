@@ -13,9 +13,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import './assets/css/reset.css';
-@import './assets/ifont/iconfont.css';
-@import './assets/css/reset-plugins.scss';
-@import './assets/css/common.scss';
-@import './assets/css/animate.css';
+@import "./assets/css/reset.css";
+@import "./assets/iconfont/iconfont.css";
+@import "./assets/css/reset-plugins.scss";
+@import "./assets/css/common.scss";
+@import "./assets/css/animate.css";
 </style>

@@ -1,5 +1,6 @@
 html,body{
   height: 100%;
+  overflow: hidden;
 }
 
 /*
@@ -16,7 +17,14 @@ html,body{
   宽度铺满
 */
 .full_width{
-  width: 100%;
+  width: 100% !important;
+}
+
+/*
+  高度铺满
+*/
+.full_height{
+  height: 100%;
 }
 
 /*
@@ -34,6 +42,41 @@ html,body{
 }
 
 /*
+  文字左对齐
+*/
+.text_left{
+  text-align: left;
+}
+
+/*
+  文字右对齐
+*/
+.text_right{
+  text-align: right;
+}
+
+/*
+  文字强制不换行
+*/
+.word_nowrap{
+  word-wrap: normal;
+}
+
+/*
+  右浮动
+*/
+.float_right{
+  float: right;
+}
+
+/*
+  左浮动
+*/
+.float_left{
+  float: left;
+}
+
+/*
   清楚浮动
 */
 .cl{
@@ -45,4 +88,48 @@ html,body{
     visibility: hidden;
     height: 0;
   }
+}
+
+/*
+  上边距15
+*/
+.margin_top_15{
+  margin-top: 15px;
+}
+
+/*
+  右边距15
+*/
+.margin_right_20{
+  margin-right: 20px;
+}
+
+/*
+  左边距
+*/
+.margin_left_20{
+  margin-left: 20px;
+}
+
+/*
+  display 行块
+*/
+.inline_block{
+  display: inline-block
+}
+
+/*
+  内容区域公共布局
+*/
+.public_viewer>div{
+  background-color: #fff;
+  margin-bottom: $mainPadding;
+  padding: $mainPadding;
+}
+
+/*
+  字体灰色
+*/
+.text_gray{
+  color: #ccc;
 }

@@ -1,7 +1,7 @@
 <template>
   <el-select class="transparent_select language_select" v-model="locale" @change="changeLanguage">
     <el-option
-      v-for="item in options"
+      v-for="item in languageOptions"
       :key="item.value"
       :label="item.label"
       :value="item.value">
@@ -10,25 +10,19 @@
 </template>
 
 <script>
-import { cookie } from '../../assets/js/utils'
 import { formatLanguage } from '../../assets/js/format'
+import { languageOptions } from '../../assets/js/options'
 export default {
   data () {
     return {
-      options: [{
-        value: 'cn',
-        label: '简体中文'
-      }, {
-        value: 'tw',
-        label: '繁體中文'
-      }],
+      languageOptions,
       locale: this.$i18n.locale
     }
   },
   methods: {
     changeLanguage (locale) {
       this.$i18n.locale = locale
-      cookie.set('language', locale, 24 * 365)
+      localStorage.setItem('language', locale)
       this.axios.defaults.params['language'] = formatLanguage(locale)
       this.$router.go(0)
     }
@@ -37,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.language_select{
+.language_select {
   width: 100px;
 }
 </style>

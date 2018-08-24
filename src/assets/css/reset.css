@@ -11,6 +11,7 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video, input, butt
 	padding: 0;
 	border: 0;
 	box-sizing: border-box;
+	word-break: break-all;
 }
 body {
 	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
@@ -30,7 +31,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-button{
+button {
 	outline: 0;
 }
 input:-webkit-autofill, 
